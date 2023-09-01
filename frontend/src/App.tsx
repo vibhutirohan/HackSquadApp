@@ -1,14 +1,15 @@
 import React from 'react';
 
-
+import './App.css';
+import { MainRoutes } from './Routes/MainRoutes';
+import { Navbar } from './Components/Navbar';
 
 function App() {
   return (
     <div>
-      {/* <h1 >This is h1 tag but won't be a heading due to tailwind</h1>
-      <h1 className='text-4xl'>heading with tailwind</h1> */}
-      
-    </div>
+    <Navbar/>
+    <MainRoutes />
+  </div>
   );
 }
 
