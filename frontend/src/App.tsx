@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import { MainRoutes } from './Routes/MainRoutes';
+import { Navbar } from './Components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <div>
+    <Navbar/>
+    <MainRoutes />
+  </div>
   );
 }
 
