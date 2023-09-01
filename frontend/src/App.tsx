@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      {/* <h1 >This is h1 tag but won't be a heading due to tailwind</h1>
+      <h1 className='text-4xl'>heading with tailwind</h1> */}
       
     </div>
   );
