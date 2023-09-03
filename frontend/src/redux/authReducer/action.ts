@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { User } from "../../contraints/Type";
 import axios from 'axios'
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "../actionType";
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionType";
 
 
 export const loginSuccess= (user:User)=> (dispatch:Dispatch)=>{
@@ -17,5 +17,7 @@ export const loginSuccess= (user:User)=> (dispatch:Dispatch)=>{
      })
 }
 
-
+export const Logout=()=>(dispatch:Dispatch)=>{
+   dispatch({type: LOGOUT_SUCCESS});
+}
 

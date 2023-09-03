@@ -12,7 +12,7 @@ export interface Response {
 }
 
 export type authAction={
-    type:'LOGIN_SUCCESS' | 'LOGIN_FAILURE' | 'LOGIN_REQUEST',
+    type:'LOGIN_SUCCESS' | 'LOGIN_FAILURE' | 'LOGIN_REQUEST'|'LOGOUT_SUCCESS' ,
     payload?:any
 }
 
