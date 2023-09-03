@@ -31,15 +31,16 @@ const Feedback = () => {
 
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Feedback</h1>
-    
+    <div className="items-center mt-[-100px] flex h-screen border-2 border-black justify-center">
+      <div>
+      <div>
+      <h1 className="text-2xl text-custom-teal mb-10 font-bold">Feedback</h1>
+      </div>
         <div className="border p-2 mb-4 " >
           <div > <span className="font-bold">Score:</span> {result.score}</div>
           <div ><span className="font-bold">Feedback</span>: {result.feedback}</div>
-          
         </div>
-      
+      </div>
     </div>
   );
 };

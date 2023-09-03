@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import react from '../image/react.png'
+import java from '../image/java.png'
+import node from '../image/node.png'
+import js from '../image/js.png'
+import redux from '../image/redux.png'
+import tailwind from '../image/tailwind.png'
 
 interface Person {
   id: number;
@@ -63,7 +69,21 @@ const Dropdown = () => {
   console.log("data", data);
   localStorage.setItem("questions", JSON.stringify(data));
   return (
-    <div className="flex items-center justify-center h-screen ">
+    <>
+{/* ---------------------------------------------------------------------------------------------------------------------------- */}
+    <div className="text-center mt-10">
+      <h2 className="text-2xl text-custom-teal font-serif italic font-bold">Elevate Your Interview Game In </h2>
+    </div>
+    <div className="flex justify-center mt-10 gap-10 w-full hover:zoom">
+      <img className="w-1/12 transition-transform transform scale-100 hover:scale-110 border-4 border-custom-green rounded-full p-3   "  src={react} alt="" />
+      <img className="w-1/12 transition-transform transform scale-100 hover:scale-110 border-4 border-custom-green rounded-full p-3   "  src={node} alt="" />
+      <img className="w-1/12 transition-transform transform scale-100 hover:scale-110 border-4 border-custom-green rounded-full p-3   "  src={java} alt="" />
+      <img className="w-1/12 transition-transform transform scale-100 hover:scale-110 border-4 border-custom-green rounded-full p-3   "  src={tailwind} alt="" />
+      <img className="w-1/12 transition-transform transform scale-100 hover:scale-110 border-4 border-custom-green rounded-full p-3   "  src={'https://cdn-images-1.medium.com/max/1600/1*Vo5RDpNkOsfDn8sx06mthA.png'} alt="" />
+      <img className="w-1/12 transition-transform transform scale-100 hover:scale-110 border-4 border-custom-green rounded-full p-3   "  src={"https://www.code2inspire.com/icons/jsIcon.png"} alt="" />
+    </div>
+{/* ---------------------------------------------------------------------------------------------------------------------------------- */}
+    <div className="flex items-center mt-[-150px] justify-center h-screen ">
       <div className="w-64">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -92,7 +112,7 @@ const Dropdown = () => {
           <div className="mb-4">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-20"
+              className="bg-custom-green hover:bg-custom-teal text-white font-bold py-2 px-4 rounded ml-20"
             >
               Submit
             </button>
@@ -100,6 +120,7 @@ const Dropdown = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
