@@ -7,6 +7,7 @@ export const HomePage = () => {
     const handleRedirect=()=>{
       navigate('/category')
     }
+  
   return (
     <>
     <div className=' mx-auto ml-10 mr-10 mt-10 bg-custom-teal flex justify-between'>
