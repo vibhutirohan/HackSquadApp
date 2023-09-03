@@ -6,6 +6,7 @@ export const Navbar = () => {
 
     const isAuth=useSelector((store:RootState)=>store.authReducer.isAuth)
     const user=useSelector((store:RootState)=>store.authReducer.user)
+    // user added in reducer
   return (
     <nav className="bg-custom-blue shadow-xl  p-5 flex justify-evenly">
       <div className='m-auto'>
