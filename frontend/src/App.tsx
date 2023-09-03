@@ -9,6 +9,7 @@ function App() {
     <div>
     <Navbar/>
     <MainRoutes />
+    
   </div>
   );
 }
