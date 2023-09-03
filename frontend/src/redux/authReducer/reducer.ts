@@ -5,7 +5,8 @@ const init:initialState={
     isLoading:false,
     isError:false,
     isAuth:false,
-    data:[]
+    token:"",
+    user:{}
 }
 
 export const reducer = (state=init,action:authAction)=>{
@@ -24,7 +25,8 @@ export const reducer = (state=init,action:authAction)=>{
                ...state,
                isLoading:false,
                isAuth:true,
-               data:payload,
+               token:payload.Accesstoken,
+               user:payload.user
             // token:payload?.accessToken
             }
         }

@@ -1,26 +1,21 @@
 import { Dispatch } from "redux";
-import { User, authAction } from "../../contraints/Type";
+import { User } from "../../contraints/Type";
 import axios from 'axios'
-import { LOGIN_REQUEST } from "../actionType";
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "../actionType";
 
-export const loginSuccess=(user:any)=>(dispatch:any)=>{
+
+export const loginSuccess= (user:User)=> (dispatch:Dispatch)=>{
      dispatch({type:LOGIN_REQUEST})
-     axios.post('https://hacksquad-api.onrender.com/user/register',{
-        method:'POST'
+     axios.post('https://hacksquad-api.onrender.com/user/login',user)
+     .then((res)=>{
+        console.log(res)
+        dispatch({type:LOGIN_SUCCESS, payload:res?.data})
+     })
+     .catch((error)=>{
+        dispatch({type:LOGIN_FAILURE})
+        console.log(error)
      })
 }
 
-// try {
-//     dispatch({type:LOGIN_REQUEST})
-//     try {
-//       const res = await axios.post(`${baseURL}/users/login`,user);
-//       console.log(res)
-//       dispatch({type:LOGIN_SUCCESS, payload:res?.data})
 
-//       return res?.data?.accessToken;
-//     } catch (error) {
-//       dispatch({type:LOGIN_FAILURE})
-//     }
-//   } catch (error) {
-//     console.log(error)
-//   }
+

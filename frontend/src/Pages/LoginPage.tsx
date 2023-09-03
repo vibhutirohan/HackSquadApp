@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Dispatch, useState } from 'react'
 import {useDispatch,useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { RootState } from '../redux/store'
@@ -9,23 +9,29 @@ import { loginSuccess } from '../redux/authReducer/action'
 const LoginPage = () => {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
-    const dispatch=useDispatch()
+    const dispatch:Dispatch<any>=useDispatch()
     const navigate=useNavigate()
     
     const isLoading=useSelector((store:RootState)=>store.authReducer.isLoading)
     const isError=useSelector((store:RootState)=>store.authReducer.isError)
     const isAuth=useSelector((store:RootState)=>store.authReducer.isAuth)
+    const user=useSelector((store:RootState)=>store.authReducer.user)
+    const token=useSelector((store:RootState)=>store.authReducer.token)
    
-    console.log(isAuth,isLoading,isError)
+   
     const handleLogin=()=>{
-    //   let user={email,password}
+      let user={email,password}
 
-    //   if(user && password){
-    //    dispatch(loginSuccess(user))
-    //   }
-
+      if(user){
+         dispatch(loginSuccess(user))
+         console.log(isAuth,isLoading,isError,user,token)
+         navigate('/')
+      }
+      else{
+        alert('Enter valid credentials !!')
+      }
     }
-
+    console.log(isAuth,isLoading,isError,user,token)
   return (
     <div className='container mt-8 m-auto flex justify-between'>
         <div className='w-6/12  '>

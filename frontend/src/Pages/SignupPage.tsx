@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { Dispatch, useState } from 'react'
 import {useDispatch,useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { RootState } from '../redux/store'
 import { Link } from 'react-router-dom'
+import { loginSuccess } from '../redux/authReducer/action'
+import axios from 'axios'
 
 const SignupPage = () => {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     const [name,setName]=useState("")
-    const dispatch=useDispatch()
+    const dispatch:Dispatch<any>=useDispatch()
     const navigate=useNavigate()
     
     const isLoading=useSelector((store:RootState)=>store.authReducer.isLoading)
@@ -17,13 +19,15 @@ const SignupPage = () => {
     
     console.log(isAuth,isLoading,isError)
 
-    const handleChange=(e:any)=>{
-        console.log(e.target.value)
-    }
-
     const handleLogin=()=>{
-
-    }
+        let newuser={email,password,name}
+        if(newuser){
+          axios.post('https://hacksquad-api.onrender.com/user/register',newuser)
+          .then((res)=>{
+            console.log(res)
+          })
+        }
+      }
 
   return (
     <div className='container mt-8 m-auto flex justify-between'>
@@ -37,18 +41,18 @@ const SignupPage = () => {
                 </div>
                 <div className= 'mt-[-10px] ml-14'>
                 <label className='font-semibold mb-4'>Enter Name :</label>
-                <input className='w-10/12 rounded  border-2 border-black' type="text"  placeholder='Name' value={name} name='name' onChange={handleChange} />
+                <input className='w-10/12 rounded  border-2 border-black' type="text"  placeholder='Name' value={name} name='name' onChange={(e)=>{setName(e.target.value)}} />
                 </div>
                 <div className='mt-2 ml-14'>
                 <label className='font-semibold mb-4'>Enter Email :</label>
-                <input className='w-10/12 rounded  border-2 border-black' type="email"  placeholder='Email' value={email} name='email' onChange={handleChange} />
+                <input className='w-10/12 rounded  border-2 border-black' type="email"  placeholder='Email' value={email} name='email' onChange={(e)=>{setEmail(e.target.value)}} />
                 </div>
                 <div className='mt-2 ml-14'>
                 <label className='font-semibold mb-4'>Enter Password :</label>
-                <input className='w-10/12 rounded   border-2 border-black'type="password"  placeholder='Password' value={password} name='password' onChange={handleChange} />
+                <input className='w-10/12 rounded   border-2 border-black'type="password"  placeholder='Password' value={password} name='password' onChange={(e)=>{setPassword(e.target.value)}} />
                 </div>
                 <div className=' ml-14'>
-                <button className='w-10/12 rounded  bg-custom-green mt-10 text-white border-2 border-black' onClick={handleLogin}>Login</button>
+                <button className='w-10/12 rounded  bg-custom-green mt-10 text-white border-2 border-black' onClick={handleLogin}>SignUp</button>
                 </div>
                 <h2 className='mt-4 ml-14'>Already have an account? <Link className='hover:text-custom-green' to='/login'>Login here</Link></h2>
             </div>

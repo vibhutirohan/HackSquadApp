@@ -1,8 +1,9 @@
 export interface initialState{
     isLoading:boolean,
     isError:boolean,
-   isAuth:boolean
-   data:[]
+   isAuth:boolean,
+   token:string,
+   user:{}
 }
 
 export interface Response {
