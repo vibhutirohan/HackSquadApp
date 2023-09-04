@@ -7,8 +7,8 @@ import { loginSuccess } from '../redux/authReducer/action'
 
 
 const LoginPage = () => {
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
+    const [email,setEmail]=useState("shas@gmail.com")
+    const [password,setPassword]=useState("shas")
     const dispatch:Dispatch<any>=useDispatch()
     const navigate=useNavigate()
     

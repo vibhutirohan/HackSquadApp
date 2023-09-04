@@ -6,7 +6,11 @@ import Dashboard from '../Components/Dashboard';
 import LoginPage from '../Pages/LoginPage';
 import SignupPage from '../Pages/SignupPage';
 import Feedback from '../Components/Feedback';
+
+import History from '../Components/History';
+
 import PrivateRoute from './PrivateRoute';
+
 
 
 export const MainRoutes = () => {
@@ -23,6 +27,8 @@ export const MainRoutes = () => {
             <Route path='/login' element={<LoginPage />}></Route>
             <Route path='/signup' element={<SignupPage />}></Route>
             <Route path='/feedback' element={<Feedback />}></Route>
+            <Route path='/history' element={<History />}></Route>
+
 
         </Routes>
     </div>

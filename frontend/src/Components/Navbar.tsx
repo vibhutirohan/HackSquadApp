@@ -8,7 +8,8 @@ export const Navbar = () => {
     const dispatch:Dispatch<any>=useDispatch()
     const isAuth=useSelector((store:RootState)=>store.authReducer.isAuth)
     const user=useSelector((store:RootState)=>store.authReducer.user)
-  
+
+    // user added in reducer 
     console.log(isAuth,user)
 
     const handleLogout = () => {
@@ -23,10 +24,17 @@ export const Navbar = () => {
       <div className='m-auto'>
       <NavLink to='/' className="text-custom-teal  text-xl font-semibold ">PrepInterview</NavLink>
       </div>
+      <div>
+      
+      {isAuth && <NavLink to='/history' className="mr-3 bg-white p-2 md:rounded-xl">history</NavLink>}
+      </div>
       <div className='pr-3'>
+
+      {isAuth?<NavLink className="text-custom-teal hover:font-bold text-md font-semibold" to='/'><span className='mr-3 bg-white p-2 md:rounded-xl'>{user.name}</span>  Logout</NavLink>:
+
       {isAuth?<NavLink onClick={handleLogout}  className="text-custom-teal hover:font-bold text-md font-semibold" to='/'>Logout</NavLink>:
-      <NavLink className="text-custom-teal hover:font-bold text-md font-semibold" to='/login'>Login</NavLink>
-      }
+
+    
       </div>
   </nav>
   )

@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const Feedback = () => {
   // Retrieve data from localStorage and parse it
- 
-  const inputString = JSON.parse(localStorage.getItem("feedback") || "[]");
+  // const inputString = JSON.parse(localStorage.getItem("feedback")) || "\n    [\n        score: 8,\n        feedback: \"The answer provided is answering the question correctly.\",\n        extra: None,\n        error: None\n    ]";
+  const inputString ="\n    [\n        score: 8,\n        feedback: \"The answer provided is answering the question correctly.\",\n        extra: None,\n        error: None\n    ]";
+
+//"\n    [\n        score: 8,\n        feedback: \"The answer provided is answering the question correctly.\",\n        extra: None,\n        error: None\n    ]"
 
   const keyValueRegex = /(\w+):\s*([\w\s"'.]+),/g;
   
