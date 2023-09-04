@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Dictaphone from './SpeechRecognition';
+import { useNavigate } from 'react-router-dom';
+
 
 const Dashboard = () => {
+  const navigate = useNavigate()
   const [isStarted, setIsStarted] = useState(false);
   const [dataArray, setDataArray] = useState<string[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Initialize to 0
@@ -65,7 +68,7 @@ const Dashboard = () => {
         "answer1": dataArray[0]||"",
         "answer2": dataArray[1]||"",
     };
-    console.log(payload);
+    // console.log(payload);
 
     // Define the endpoint URL
     const endpoint = "https://hacksquad-api.onrender.com/question/rating";
@@ -90,6 +93,7 @@ const Dashboard = () => {
         .then((data) => {
             console.log("Response from server:", data);
             localStorage.setItem("feedback", JSON.stringify(data));
+          navigate("/feedback");
         })
         .catch((error) => {
             console.error("Error sending data to server:", error);

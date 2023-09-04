@@ -48,8 +48,8 @@ const Dropdown = () => {
           const data = await response.json();
           //   console.log('Response:', data.data);
           setData(data.data);
-
-          // navigate("/dashboard");
+          localStorage.setItem("questions",JSON.stringify(data.data))
+          navigate("/dashboard");
         } else {
           console.error("Request failed");
         }
