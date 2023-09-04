@@ -24,14 +24,14 @@ const LoginPage = () => {
 
       if(user){
          dispatch(loginSuccess(user))
-         console.log(isAuth,isLoading,isError,user,token)
+         alert('Login Successful !!')
          navigate('/')
       }
       else{
         alert('Enter valid credentials !!')
       }
     }
-    console.log(isAuth,isLoading,isError,user,token)
+    console.log(isAuth,isLoading,isError,user,token,"token")
   return (
     <div className='container mt-8 m-auto flex justify-between'>
         <div className='w-6/12  '>

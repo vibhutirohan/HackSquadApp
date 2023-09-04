@@ -6,7 +6,11 @@ import Dashboard from '../Components/Dashboard';
 import LoginPage from '../Pages/LoginPage';
 import SignupPage from '../Pages/SignupPage';
 import Feedback from '../Components/Feedback';
+
 import History from '../Components/History';
+
+import PrivateRoute from './PrivateRoute';
+
 
 
 export const MainRoutes = () => {
@@ -14,7 +18,11 @@ export const MainRoutes = () => {
     <div>
         <Routes>
             <Route path='/' element={<HomePage />}></Route>
-            <Route path='/category' element={<CategoryPage />}></Route>
+            <Route path='/category' element={
+            <PrivateRoute>
+              <CategoryPage />
+            </PrivateRoute>
+            }></Route>
             <Route path='/dashboard' element={<Dashboard />}></Route>
             <Route path='/login' element={<LoginPage />}></Route>
             <Route path='/signup' element={<SignupPage />}></Route>

@@ -1,5 +1,5 @@
 import { authAction, initialState } from "../../contraints/Type"
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "../actionType"
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../actionType"
 
 const init:initialState={
     isLoading:false,
@@ -39,6 +39,16 @@ export const reducer = (state=init,action:authAction)=>{
             //    token:payload?.accessToken
             }
         }
+        case LOGOUT_SUCCESS: {
+            return {
+              ...state,
+              isLoading:false,
+              isError:false,
+              isAuth:false,
+              token:"",
+              user:{}
+            };
+          }
         default:{
             return state
         }
