@@ -24,8 +24,11 @@ const LoginPage = () => {
 
       if(user){
          dispatch(loginSuccess(user))
-         alert('Login Successful !!')
-         navigate('/')
+          alert('Login Successful !!') 
+          navigate('/')
+       
+         
+        
       }
       else{
         alert('Enter valid credentials !!')

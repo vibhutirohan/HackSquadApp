@@ -1,10 +1,10 @@
 <h1>PrepInterview React-TypeScript App</h1>
 
 <h4> To run PrepInterview website clone click below link</h4>
-<ul> <li><a href=""> netlify Deployed Link </a></li> </ul>
-<ul> <li><a href=""> Backedn Delployed Link </a></li> </ul>
+<ul> <li><a href=""> Netlify Deployed Link </a></li> </ul>
+<ul> <li><a href="https://hacksquad-api.onrender.com"> Backedn Delployed Link </a></li> </ul>
 
-<div> <p>Create a cutting-edge AI-integrated interview platform, empowering users to enhance their interview skills through realistic mock interviews and personalized feedback. This application is developed by a team of four Aspiring developers:Shashikant Yadav,Shriya Pandey,Mahendra Mohane and Sujal Singh Thakur</p>
+<div> <p>A cutting-edge AI-integrated interview platform, empowering users to enhance their interview skills through realistic mock interviews and personalized feedback. This application is developed by a team of four Aspiring developers:Shashikant Yadav,Shriya Pandey,Mahendra Mohane and Sujal Singh Thakur</p>
 <br />
 <h2>Features</h2>
 
