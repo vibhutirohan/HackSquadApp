@@ -30,11 +30,11 @@ export const Navbar = () => {
       </div>
       <div className='pr-3'>
 
-      {isAuth?<NavLink className="text-custom-teal hover:font-bold text-md font-semibold" to='/'><span className='mr-3 bg-white p-2 md:rounded-xl'>{user.name}</span>  Logout</NavLink>:
+      {isAuth?<NavLink onClick={handleLogout} className="text-custom-teal hover:font-bold text-md font-semibold" to='/'><span className='mr-3 bg-white p-2 md:rounded-xl'>{user.name}</span>  Logout</NavLink>:
+      <NavLink className="text-custom-teal hover:font-bold text-md font-semibold" to='/login'>Login</NavLink>
+      
 
-      {isAuth?<NavLink onClick={handleLogout}  className="text-custom-teal hover:font-bold text-md font-semibold" to='/'>Logout</NavLink>:
-
-    
+  }
       </div>
   </nav>
   )
