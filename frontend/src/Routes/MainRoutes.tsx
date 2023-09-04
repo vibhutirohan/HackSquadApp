@@ -23,11 +23,11 @@ export const MainRoutes = () => {
               <CategoryPage />
             </PrivateRoute>
             }></Route>
-            <Route path='/dashboard' element={<Dashboard />}></Route>
+            <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
             <Route path='/login' element={<LoginPage />}></Route>
             <Route path='/signup' element={<SignupPage />}></Route>
-            <Route path='/feedback' element={<Feedback />}></Route>
-            <Route path='/history' element={<History />}></Route>
+            <Route path='/feedback' element={<PrivateRoute><Feedback /></PrivateRoute>}></Route>
+            <Route path='/history' element={<PrivateRoute><History /></PrivateRoute>}></Route>
 
 
         </Routes>

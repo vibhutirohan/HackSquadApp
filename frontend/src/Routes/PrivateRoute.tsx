@@ -8,7 +8,7 @@ const PrivateRoute = ({children}:any) => {
     const navigate=useNavigate()
     console.log(isAuth)
     if(isAuth===false){
-     <Navigate to={'/'}></Navigate>
+    return  <Navigate to={'/login'}></Navigate>
     }
     
       return <div>
