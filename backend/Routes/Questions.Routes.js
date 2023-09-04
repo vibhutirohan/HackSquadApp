@@ -80,13 +80,10 @@ QuestionRoute.post("/rating", async (req, res) => {
 	
     Level of the question is  hard so the response should be also based on that level
 
-	Provide the response on this format : [
-        score: {the score},
-        feedback : {the feedback},
-        extra : {extra information},
-        error : {error if any}
-    ]
+	Provide the response on this format : "score: {the score}" "feedback : {the feedback}"
+    
 
+and  do not insert any "\n" text in the response
     `;
 
   try {

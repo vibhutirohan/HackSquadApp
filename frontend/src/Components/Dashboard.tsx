@@ -7,9 +7,9 @@ const Dashboard = () => {
   const navigate = useNavigate()
   const [isStarted, setIsStarted] = useState(false);
   const [dataArray, setDataArray] = useState<string[]>([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Initialize to 0
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [recordedText, setRecordedText] = useState<string | null>(null);
-  const [timer, setTimer] = useState<number | null>(null); // Initialize to null
+  const [timer, setTimer] = useState<number | null>(null); 
   const [questions, setQuestions] = useState<string[]>([]);
 
   const handleStartButtonClick = () => {
