@@ -68,10 +68,10 @@ const Dashboard = () => {
         "answer1": dataArray[0]||"",
         "answer2": dataArray[1]||"",
     };
-    // console.log(payload);
+    console.log("payload",payload);
 
     // Define the endpoint URL
-    const endpoint = "https://hacksquad-api.onrender.com/question/rating";
+    const endpoint = "https://hacksquadai-api.onrender.com/question/rating";
 
     // Define the request options
     const requestOptions = {
@@ -127,12 +127,12 @@ const Dashboard = () => {
 
       <Dictaphone onTextChange={handleDictaphoneText} isStarted={isStarted} />
 
-      {currentQuestionIndex === questions.length - 1 && (
+      {currentQuestionIndex === questions.length -1 && (
         <button
           className='bg-green-500 text-white font-bold py-2 px-4 rounded ml-10 mt-10'
           onClick={sendDataToServer}
         >
-          Submit Data
+         This is the last Question answer it then Click Me
         </button>
       )}
 

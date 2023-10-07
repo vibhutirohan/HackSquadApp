@@ -47,7 +47,7 @@ const Dictaphone: React.FC<DictaphoneProps> = ({ onTextChange,isStarted }) => {
           onClick={() => {
 
           
-              SpeechRecognition.startListening();
+              SpeechRecognition.startListening({ continuous: true });
               handleCheck();
             
             
@@ -65,15 +65,16 @@ const Dictaphone: React.FC<DictaphoneProps> = ({ onTextChange,isStarted }) => {
         >
           Disable mic
         </button>}
-        {/* <button
+       {isStarted &&  <button
           className={check ? test : che}
           onClick={() => {
             resetTranscript();
             handleCheck();
           }}
         >
-          Reset
-        </button> */}
+          Reset text
+        </button>
+       }
         {/* <p className='w-160 h-160 ml-10 mr-10 mt-10 border border-2'>{transcript}</p> */}
       </div>
     </>
