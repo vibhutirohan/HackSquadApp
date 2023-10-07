@@ -40,7 +40,7 @@ const Dropdown = () => {
       };
       try {
         const response = await fetch(
-          "https://hacksquad-api.onrender.com/question/query",
+          "https://hacksquadai-api.onrender.com/question/query",
           {
             method: "POST",
             headers: {

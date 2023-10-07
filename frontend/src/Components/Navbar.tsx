@@ -26,7 +26,7 @@ export const Navbar = () => {
       </div>
       <div>
       
-      {isAuth && <NavLink to='/history' className="mr-3 bg-white p-2 md:rounded-xl">history</NavLink>}
+      {isAuth && <NavLink to='/history' className="mr-3 bg-white p-2 md:rounded-xl">History</NavLink>}
       </div>
       <div className='pr-3'>
 
